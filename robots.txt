@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://INSERT_URL/sitemap.xml
+Sitemap: https://arbitrumswap.github.io/sitemap.xml
