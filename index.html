@@ -16,87 +16,220 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://arbitrumswap.github.io/#website", "url": "https://arbitrumswap.github.io/", "name": "Arbitrum Swap — Trade Tokens on Arbitrum Cheaply"}, {"@type": "WebPage", "@id": "https://arbitrumswap.github.io/#webpage", "url": "https://arbitrumswap.github.io/", "name": "Arbitrum Swap — Trade Tokens on Arbitrum Cheaply", "isPartOf": {"@id": "https://arbitrumswap.github.io/#website"}, "description": "Make an Arbitrum Swap to trade ETH, USDC and tokens on the Arbitrum network at low fees. See the route, rate and minimum received before you sign, and keep your own keys.", "datePublished": "2026-10-09", "dateModified": "2026-10-09"}, {"@type": "SoftwareApplication", "name": "Arbitrum Swap", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://arbitrumswap.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Swaps"}, {"@type": "ListItem", "position": 3, "name": "Arbitrum Swap"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need ETH for an Arbitrum Swap?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Gas on Arbitrum is paid in ETH, so keep a small amount even when the tokens you trade are stablecoins."}}, {"@type": "Question", "name": "Why is an Arbitrum Swap cheaper than on Ethereum?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum is a layer-2 rollup, so gas is a fraction of Ethereum mainnet while still settling to it."}}, {"@type": "Question", "name": "Do I need an account to swap on Arbitrum?", "acceptedAnswer": {"@type": "Answer", "text": "No. You connect a self-custody wallet and trade on-chain, with no sign-up and no custody of your funds."}}, {"@type": "Question", "name": "Why do I receive less than the quote?", "acceptedAnswer": {"@type": "Answer", "text": "Price impact and slippage on your size, plus the gas and pool fees, reduce the output. The minimum received is the guaranteed floor at your slippage."}}, {"@type": "Question", "name": "What happens if my swap fails?", "acceptedAnswer": {"@type": "Answer", "text": "A failed transaction reverts and you keep your tokens, though the gas for the attempt is spent."}}]}]}</script>
 <style>
 :root{--bg:#0B0D12;--surface:#12151C;--text:#EAEEF4;--muted:#8A93A3;--accent:#28A0F0;--accent-ink:#FFFFFF;--radius:14px;--display:"Space Grotesk";--body:"Inter"}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font:16px/1.65 var(--body),system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.cc553ae{max-width:1040px;margin:0 auto;padding:0 20px}
-a{color:inherit;text-decoration:none}
-.cf81e33{border:0;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);margin:0}
-.c8d6b21{display:flex;align-items:center;justify-content:space-between;height:68px}
-.cadc5a2{font:700 18px var(--display),sans-serif}
-.cd479de{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);font:600 15px var(--body),sans-serif;border:0;border-radius:calc(var(--radius) * .7);padding:12px 22px;cursor:pointer}
-.cd479de.cbf1a91{background:transparent;color:var(--text);border:1px solid color-mix(in srgb,var(--text) 18%,transparent)}
-.c4d6608{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px;padding:18px 0 6px;flex-wrap:wrap}
-.c4d6608 a:hover{color:var(--text)}
-.cfdee26{padding:26px 0 30px}
-.ceeeb09{display:inline-block;font:600 12px var(--body),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h1{font:700 clamp(34px,5vw,56px)/1.05 var(--display),sans-serif;letter-spacing:-.03em;max-width:16ch}
-h1 em{font-style:normal;color:var(--accent)}
-.c0c6f61{color:var(--muted);font-size:clamp(17px,1.7vw,20px);margin:18px 0 24px;max-width:60ch}
-.cf0c125{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.c4301b2{display:flex;gap:10px;align-items:center;margin-top:22px;color:var(--muted);font-size:14px}
-.c4301b2 img{vertical-align:middle}
-/* таблица фактов */
-.c951288{width:100%;border-collapse:collapse;margin:8px 0 8px;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);overflow:hidden}
-.c951288 th,.c951288 td{text-align:left;padding:13px 18px;font-size:15px;border-top:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
-.c951288 tr:first-child th,.c951288 tr:first-child td{border-top:0}
-.c951288 th{color:var(--muted);font-weight:600;width:42%}
-.cd946d1{padding:6px 0 10px}
-.cd946d1 h2{font:600 13px var(--body),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-/* контент */
-.c29fdd9{padding:18px 0 10px;max-width:760px}
-.c74a537{padding:24px 0;border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
-.c009ea6{font:700 clamp(21px,2.4vw,28px) var(--display),sans-serif;letter-spacing:-.02em;margin-bottom:10px}
-.c488d1f{color:var(--muted)}
-.c488d1f strong{color:var(--text)}
-.c73734e{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent);padding:4px 0}
-.c72dced{font:600 17px var(--display),sans-serif;cursor:pointer;padding:15px 0;list-style:none}
-.c0c2a91{color:var(--muted);padding:0 0 15px}
-.c91cfd3{padding:22px 0}
-.c91cfd3 h2{font:600 13px var(--body),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.cf760f8{list-style:none;display:flex;flex-direction:column;gap:7px}
-.c6c86ef{color:var(--accent)}.c6c86ef:hover{text-decoration:underline}
-footer{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent);padding:26px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:var(--accent-ink)}
+a{color:inherit;text-underline-offset:.25em}
+a:hover{color:var(--accent)}
+button,input,select,textarea{font:inherit}
+input,select{color:var(--text);accent-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+img,svg{max-width:100%;vertical-align:middle}
+svg{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cc553ae{width:min(1200px,calc(100% - 4rem));margin-inline:auto}
+.c4bfba4{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid color-mix(in srgb,var(--text) 12%,transparent)}
+.cadc5a2{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;font:650 1.3rem/1.2 var(--display);letter-spacing:-.04em}
+.c64009f{display:grid;place-items:center;width:36px;height:36px;background:var(--accent);color:var(--accent-ink);border-radius:calc(var(--radius)*.5)}
+.c64009f svg{width:23px;height:23px}
+.c71eb3d{display:flex;align-items:center;gap:1.8rem;font-size:.875rem;font-weight:550}
+.c71eb3d a{text-decoration:none}
+.c71eb3d .c28665b{padding:.6rem 1rem;border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:var(--radius)}
+.ca25699{padding-block:1.5rem;font-size:.8rem;color:var(--muted);overflow-wrap:anywhere}
+.c4d6608{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem;margin:0;padding:0;list-style:none}
+.c4d6608 a{text-decoration:none}
+.c4d6608 [aria-current="page"]{color:var(--text)}
+.cfdee26{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:clamp(2rem,6vw,6rem);padding-block:2.5rem 5.5rem}
+.cc6feb2{min-width:0}
+.ceeeb09{display:inline-flex;align-items:center;gap:.55rem;margin:0 0 1.25rem;color:var(--muted);font-size:.875rem}
+.ceeeb09::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 12%,transparent)}
+h1{margin:0;font:550 clamp(2.65rem,5vw,4.75rem)/1.06 var(--display);letter-spacing:-.055em;overflow-wrap:anywhere;text-wrap:balance}
+h1 em{color:var(--accent);font-style:normal}
+.c0c6f61{max-width:36rem;margin:1.6rem 0 2rem;color:var(--muted);font-size:1.1rem;line-height:1.8}
+.cf0c125{display:inline-flex;justify-content:center;align-items:center;gap:1.4rem;min-height:54px;padding:.9rem 1.4rem;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 86%,var(--text)));color:var(--accent-ink);border:1px solid color-mix(in srgb,var(--accent-ink) 12%,transparent);border-radius:var(--radius);font-weight:650;text-decoration:none;box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 20%,transparent);transition:transform .2s,box-shadow .2s}
+.cf0c125 svg{width:20px;height:20px;flex:none}
+.cf0c125:hover{color:var(--accent-ink);transform:translateY(-2px);box-shadow:0 12px 26px color-mix(in srgb,var(--accent) 28%,transparent)}
+.cb844e9{display:flex;align-items:center;gap:.5rem;margin:1.2rem 0 0;color:var(--muted);font-size:.8rem}
+.cb844e9 svg{width:16px;height:16px;color:var(--accent)}
+.c3ad2cd{position:relative;min-width:0;padding:12px;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:calc(var(--radius) + 12px);background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 13%,var(--bg)),color-mix(in srgb,var(--surface) 70%,var(--bg)));box-shadow:0 28px 64px -28px color-mix(in srgb,var(--text) 24%,transparent)}
+.cb0c28e{padding:clamp(1.25rem,3vw,2rem);background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:var(--radius)}
+.cf537a3{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.7rem}
+.cf537a3 h2{margin:0;font:600 1.2rem/1.3 var(--display);letter-spacing:-.025em}
+.c3c084a{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.72rem;white-space:nowrap}
+.c3c084a::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.c6697b9{display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr);align-items:center;gap:.7rem;margin-bottom:1.7rem}
+.cb84611{min-width:0;padding:.9rem 1rem;background:color-mix(in srgb,var(--bg) 70%,var(--surface));border:1px solid color-mix(in srgb,var(--text) 9%,transparent);border-radius:calc(var(--radius)*.7)}
+.cf1e16d{display:block;margin-bottom:.65rem;color:var(--muted);font-size:.75rem}
+.cdf9cd1{display:flex;align-items:center;gap:.5rem;min-height:32px;font:600 .95rem/1.3 var(--display);overflow-wrap:anywhere}
+.cdf9cd1 img,.cdf9cd1 svg{width:auto;height:32px;max-width:100%;object-fit:contain}
+.cdd64a8{display:grid;place-items:center;width:36px;height:36px;border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);border-radius:50%;color:var(--accent)}
+.cdd64a8 svg{width:18px;height:18px}
+.ce6e7ad{display:block;margin-bottom:.55rem;font-size:.8rem;font-weight:550}
+.ca08c63{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border:1px solid color-mix(in srgb,var(--text) 19%,transparent);border-radius:calc(var(--radius)*.7);background:var(--bg);transition:border-color .2s}
+.ca08c63:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 13%,transparent)}
+.ca08c63 input{width:100%;min-width:0;padding:0;border:0;border-radius:0;background:var(--bg);font:550 1.9rem/1.5 var(--display);font-variant-numeric:tabular-nums}
+.ca08c63 input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ca08c63 span{color:var(--muted);font-size:.8rem}
+.cae46aa{margin:.5rem 0 1.2rem;color:var(--muted);font-size:.73rem}
+.c455c10{margin:-.65rem 0 1rem;color:var(--text);font-size:.8rem}
+.cb40dea{padding:1.2rem;border:1px solid color-mix(in srgb,var(--accent) 18%,transparent);border-radius:calc(var(--radius)*.7);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 8%,var(--surface)),var(--surface))}
+.cae2226{display:block;color:var(--muted);font-size:.8rem}
+.c7de443{display:block;margin:.35rem 0 1.2rem;font:600 clamp(1.65rem,3vw,2.25rem)/1.25 var(--display);letter-spacing:-.035em;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.c7de443 small{color:var(--muted);font:400 .8rem/1.5 var(--body);letter-spacing:0}
+.c9e434d{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding-top:1rem;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent)}
+.c9102c2{display:block;color:var(--muted);font-size:.72rem}
+.cd7d264{display:block;margin-top:.2rem;font-size:.9rem;font-weight:600;font-variant-numeric:tabular-nums}
+.cb0c28e .cf0c125{width:100%;margin-top:1.3rem;justify-content:space-between}
+.c3121c1{margin-top:1rem;color:var(--muted);font-size:.73rem}
+.c3121c1 summary{cursor:pointer;width:fit-content;text-underline-offset:.2em}
+.c3121c1 summary:hover{color:var(--text)}
+.c3121c1 p{margin:.7rem 0 0}
+.c9dd394{margin:0;font:550 1.75rem/1.2 var(--display);letter-spacing:-.035em}
+.c5060e8{padding:2rem 2.25rem;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius)}
+.c5060e8 .c9dd394{margin-bottom:1.5rem}
+.cb3ee7a{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
+.c951288{width:100%;border-collapse:collapse;text-align:left;font-size:.9rem}
+.c951288 caption{text-align:left;margin-bottom:1rem;color:var(--muted)}
+.c951288 th,.c951288 td{padding:1rem 1.1rem;border-bottom:1px solid color-mix(in srgb,var(--text) 10%,transparent);vertical-align:top;overflow-wrap:anywhere}
+.c951288 th{color:var(--muted);font-weight:500}
+.c951288 thead{background:color-mix(in srgb,var(--accent) 7%,var(--surface))}
+.c951288 thead th{color:var(--text);font-weight:600}
+.c951288 tbody tr:last-child>*{border-bottom:0}
+.c951288 tbody tr:hover{background:color-mix(in srgb,var(--accent) 4%,var(--surface))}
+.c4943f3{max-width:820px;margin:4.5rem auto}
+.c74a537{margin:0 0 3.5rem;scroll-margin-top:2rem}
+.c009ea6{margin:0 0 1.25rem;font:550 clamp(1.65rem,3vw,2.25rem)/1.2 var(--display);letter-spacing:-.035em;text-wrap:balance}
+.c488d1f{color:var(--muted);font-size:1.025rem;line-height:1.9;overflow-wrap:anywhere}
+.c488d1f p{margin:0 0 1.25rem}
+.c488d1f h3{margin:1.75rem 0 .75rem;color:var(--text);font:600 1.25rem/1.35 var(--display);letter-spacing:-.02em}
+.c488d1f strong{color:var(--text);font-weight:600}
+.c488d1f a,.c0c2a91 a,.c6c86ef a{color:var(--accent);text-decoration-thickness:1px}
+.c488d1f ul,.c488d1f ol,.c0c2a91 ul,.c0c2a91 ol{padding-left:1.4rem}
+.c488d1f li+li{margin-top:.55rem}
+.c488d1f li::marker{color:var(--accent)}
+.c488d1f blockquote{margin:1.5rem 0;padding:1rem 1.5rem;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;color:var(--text)}
+.c488d1f img{height:auto;border-radius:var(--radius)}
+.c488d1f table{width:100%;border-collapse:collapse}
+.c488d1f td,.c488d1f th{padding:.75rem;border-bottom:1px solid color-mix(in srgb,var(--text) 12%,transparent);text-align:left}
+.c73734e{margin:.8rem 0;padding:0 1.4rem;border:1px solid color-mix(in srgb,var(--text) 12%,transparent);border-radius:var(--radius);background:var(--surface)}
+.c72dced{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;min-height:72px;padding:1.2rem 0;cursor:pointer;list-style:none;font:550 1.05rem/1.5 var(--display)}
+.c72dced::-webkit-details-marker{display:none}
+.c72dced::after{content:"+";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--accent) 10%,var(--surface));color:var(--accent);font:400 1.25rem/1 var(--body)}
+.c73734e[open]{border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.c73734e[open]>.c72dced::after{content:"−"}
+.c0c2a91{padding:0 2.8rem 1.3rem 0;color:var(--muted);line-height:1.85;overflow-wrap:anywhere}
+.c0c2a91 p{margin:.25rem 0 .75rem}
+.c1f6b9a{display:grid;grid-template-columns:1fr 2fr;gap:2rem;padding:2.5rem 0;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent)}
+.cf760f8{margin:0;padding:0;list-style:none}
+.c6c86ef{padding:.7rem 0;border-bottom:1px solid color-mix(in srgb,var(--text) 8%,transparent);color:var(--muted);font-size:.875rem;overflow-wrap:anywhere}
+.c6c86ef:first-child{padding-top:0}
+.c6c86ef:last-child{border-bottom:0}
+.c362a80{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding-block:1.75rem 2.5rem;border-top:1px solid color-mix(in srgb,var(--text) 12%,transparent);color:var(--muted);font-size:.8rem}
+.c0c02cf{color:var(--text);font:600 1rem/1.3 var(--display);letter-spacing:-.025em}
+.ce09011{margin:0}
+@media(min-width:1100px){.c3ad2cd{transform:rotate(1deg)}.cb0c28e{transform:rotate(-1deg)}}
+@media(max-width:850px){.cfdee26{grid-template-columns:1fr;gap:2.5rem;padding-block:1.5rem 3.5rem}.cc6feb2{max-width:650px}.c3ad2cd{width:100%;max-width:580px;justify-self:center}.c4943f3{margin-block:3.5rem}.c71eb3d{gap:1rem}h1{max-width:14ch}}
+@media(max-width:540px){.cc553ae{width:calc(100% - 2rem)}.c4bfba4{min-height:76px;gap:1rem}.c71eb3d>a:not(.c28665b){display:none}.c71eb3d .c28665b{padding:.5rem .8rem}.ca25699{padding-block:1.1rem}.cfdee26{padding-top:1rem}.cc6feb2>.cf0c125{width:100%;justify-content:space-between}.c0c6f61{font-size:1rem}.c3ad2cd{padding:7px;border-radius:calc(var(--radius) + 7px)}.cb0c28e{padding:1.1rem}.c6697b9{gap:.4rem;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr)}.cdd64a8{width:30px;height:30px}.cb84611{padding:.8rem}.c5060e8{padding:1.4rem 1rem}.c951288 th,.c951288 td{padding:.85rem .65rem}.c73734e{padding-inline:1rem}.c0c2a91{padding-right:0}.c1f6b9a{grid-template-columns:1fr;gap:1.4rem}.c362a80{align-items:flex-start;flex-direction:column;gap:.65rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}.cf0c125:hover{transform:none}}
 </style>
 </head>
 <body>
 <div class="cc553ae">
-  <nav class="c8d6b21"><span class="cadc5a2">Arbitrum Swap</span><a class="cd479de" href="dashboard/">Open app</a></nav>
+<nav class="c4bfba4" aria-label="Main navigation">
+<a class="cadc5a2" href="#hero"><span class="c64009f" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4"/></svg></span>Compare</a>
+<div class="c71eb3d"><a href="#facts">Key facts</a><a href="#guide">Guide</a><a href="#sources">Sources</a><a class="c28665b" href="dashboard/">Open app ↗</a></div>
+</nav>
+<div class="ca25699"><nav class="c4d6608" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Swaps</span> <span>/</span> <span>Arbitrum Swap</span></nav></div>
+<section class="cfdee26" id="hero" aria-labelledby="hero-title">
+<div class="cc6feb2">
+<p class="ceeeb09">Compare your transfer</p>
+<h1 id="hero-title">Arbitrum <em>Swap</em>.</h1>
+<p class="c0c6f61">An Arbitrum Swap trades ETH, USDC and other tokens on Arbitrum, an Ethereum layer-2 where fees are a fraction of mainnet. A DEX or aggregator routes your order across liquidity pools and shows the minimum received before you sign, your gas is paid in ETH, and your funds stay in your own wallet the whole time.</p>
+<a class="cf0c125" href="dashboard/">Open app <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+<p class="cb844e9"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Explore fees and timing below</p>
 </div>
-<hr class="cf81e33">
-<div class="cc553ae">
-  <nav class="c4d6608" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Swaps</span> <span>/</span> <span>Arbitrum Swap</span></nav>
-  <header class="cfdee26">
-    <span class="ceeeb09">On-chain · self-custody</span>
-    <h1>Arbitrum <em>Swap</em>.</h1>
-    <p class="c0c6f61">An Arbitrum Swap trades ETH, USDC and other tokens on Arbitrum, an Ethereum layer-2 where fees are a fraction of mainnet. A DEX or aggregator routes your order across liquidity pools and shows the minimum received before you sign, your gas is paid in ETH, and your funds stay in your own wallet the whole time.</p>
-    <div class="cf0c125"><a class="cd479de" href="dashboard/">Start now</a><a class="cd479de cbf1a91" href="#faq">Read the details</a></div>
-    <div class="c4301b2"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"> <img src="assets/tokens/usdc.svg" alt="USDC" width="28" height="28"> <span>Supported assets and networks</span></div>
-  </header>
-
-  <section class="cd946d1"><h2>Key facts</h2><table class="c951288"><tbody><tr><th scope="row">Network</th><td>Arbitrum (Ethereum L2)</td></tr>
+<aside class="c3ad2cd" aria-labelledby="estimator-title">
+<div class="cb0c28e">
+<div class="cf537a3"><h2 id="estimator-title">Transfer estimator</h2><span class="c3c084a">Auto-updating</span></div>
+<div class="c6697b9">
+<div class="cb84611"><span class="cf1e16d">From</span><div class="cdf9cd1"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"></div></div>
+<span class="cdd64a8" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+<div class="cb84611"><span class="cf1e16d">To</span><div class="cdf9cd1"><img src="assets/tokens/usdc.svg" alt="USDC" width="28" height="28"></div></div>
+</div>
+<label class="ce6e7ad" for="amount">Amount to send</label>
+<div class="ca08c63"><input id="amount" type="number" inputmode="decimal" min="1" max="1000000000" step="0.01" value="1000" aria-describedby="amount-hint amount-error"><span>units</span></div>
+<p class="cae46aa" id="amount-hint">Enter 1–1,000,000,000 units, up to 2 decimal places.</p>
+<p class="c455c10" id="amount-error" hidden></p>
+<div class="cb40dea" role="status" aria-live="polite" aria-atomic="true">
+<span class="cae2226">Estimated amount received</span>
+<output class="c7de443" id="received" for="amount">—</output>
+<div class="c9e434d">
+<div><span class="c9102c2">Estimated fee</span><output class="cd7d264" id="fee" for="amount">—</output></div>
+<div><span class="c9102c2">Estimated time</span><output class="cd7d264" id="time" for="amount">—</output></div>
+</div>
+</div>
+<a class="cf0c125" href="dashboard/">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+<details class="c3121c1"><summary>How the estimate is calculated</summary><p>Fee = 0.5 units + 0.35% of the amount, rounded to 2 decimals. Amount received = amount − fee. Time = 2 minutes + 1 minute per 10,000 units, rounded up.</p></details>
+<noscript><p class="cae46aa">Enable JavaScript to calculate fees and timing.</p></noscript>
+</div>
+</aside>
+</section>
+<section class="c5060e8" id="facts" aria-labelledby="facts-title"><h2 class="c9dd394" id="facts-title">Key facts</h2><div class="cb3ee7a" role="region" aria-label="Key facts table" tabindex="0"><table class="c951288"><tbody><tr><th scope="row">Network</th><td>Arbitrum (Ethereum L2)</td></tr>
 <tr><th scope="row">Assets</th><td>ETH, USDC, USDT, ARB and more</td></tr>
 <tr><th scope="row">Gas</th><td>Paid in ETH, low L2 fees</td></tr>
 <tr><th scope="row">Pricing</th><td>Live rate, minimum received shown</td></tr>
-<tr><th scope="row">Custody</th><td>Self-custody — you hold your keys</td></tr></tbody></table></section>
-
-  <main class="c29fdd9" id="faq">
-    <section class="c74a537"><h2 class="c009ea6">How to make an Arbitrum Swap</h2><div class="c488d1f"><strong>Connect a wallet, choose the pair, and confirm.</strong> To make an Arbitrum Swap you pick the tokens, review the live rate, the <strong>minimum received</strong> at your slippage and the network fee, then approve the token once and sign. The trade settles on Arbitrum only after you sign, and fees are low because it is a layer-2.</div></section>
+<tr><th scope="row">Custody</th><td>Self-custody — you hold your keys</td></tr></tbody></table></div></section>
+<main class="c4943f3" id="guide"><section class="c74a537"><h2 class="c009ea6">How to make an Arbitrum Swap</h2><div class="c488d1f"><strong>Connect a wallet, choose the pair, and confirm.</strong> To make an Arbitrum Swap you pick the tokens, review the live rate, the <strong>minimum received</strong> at your slippage and the network fee, then approve the token once and sign. The trade settles on Arbitrum only after you sign, and fees are low because it is a layer-2.</div></section>
 <section class="c74a537"><h2 class="c009ea6">Arbitrum Swap fees and rate</h2><div class="c488d1f">An Arbitrum Swap costs the live market rate plus a small L2 gas fee and the pool spread; there is no custody and no account. Price impact grows with trade size, so the quote shows the minimum received as the floor at your chosen slippage. Small trades cost cents compared with Ethereum mainnet.</div></section>
 <section class="c74a537"><h2 class="c009ea6">Which tokens can you swap on Arbitrum?</h2><div class="c488d1f">You can swap ETH, USDC, USDT, ARB and other liquid tokens through Arbitrum DEXs and aggregators. The reachable list depends on routing liquidity at the moment; the interface shows the expected output for each pair so you can compare before trading.</div></section>
 <section class="c74a537"><h2 class="c009ea6">Is an Arbitrum Swap safe?</h2><div class="c488d1f">A self-custody swap keeps your keys in your wallet. Confirm the destination token's contract address, the amount received and the token approval you grant, prefer a limited approval over an unlimited one, and treat any request for a seed phrase as fraud.</div></section>
-<section class="c74a537"><h2 class="c009ea6">Swapping on Arbitrum vs on Ethereum mainnet</h2><div class="c488d1f">The same pair usually costs far less on Arbitrum than on Ethereum mainnet because gas is a fraction of the base layer. If your assets are already on Arbitrum, swapping there is cheapest; otherwise weigh the bridge cost against the fees saved, judging by the <strong>net amount received</strong>.</div></section>
-    <details class="c73734e"><summary class="c72dced">Do I need ETH for an Arbitrum Swap?</summary><div class="c0c2a91">Yes. Gas on Arbitrum is paid in ETH, so keep a small amount even when the tokens you trade are stablecoins.</div></details>
+<section class="c74a537"><h2 class="c009ea6">Swapping on Arbitrum vs on Ethereum mainnet</h2><div class="c488d1f">The same pair usually costs far less on Arbitrum than on Ethereum mainnet because gas is a fraction of the base layer. If your assets are already on Arbitrum, swapping there is cheapest; otherwise weigh the bridge cost against the fees saved, judging by the <strong>net amount received</strong>.</div></section><details class="c73734e"><summary class="c72dced">Do I need ETH for an Arbitrum Swap?</summary><div class="c0c2a91">Yes. Gas on Arbitrum is paid in ETH, so keep a small amount even when the tokens you trade are stablecoins.</div></details>
 <details class="c73734e"><summary class="c72dced">Why is an Arbitrum Swap cheaper than on Ethereum?</summary><div class="c0c2a91">Arbitrum is a layer-2 rollup, so gas is a fraction of Ethereum mainnet while still settling to it.</div></details>
 <details class="c73734e"><summary class="c72dced">Do I need an account to swap on Arbitrum?</summary><div class="c0c2a91">No. You connect a self-custody wallet and trade on-chain, with no sign-up and no custody of your funds.</div></details>
 <details class="c73734e"><summary class="c72dced">Why do I receive less than the quote?</summary><div class="c0c2a91">Price impact and slippage on your size, plus the gas and pool fees, reduce the output. The minimum received is the guaranteed floor at your slippage.</div></details>
-<details class="c73734e"><summary class="c72dced">What happens if my swap fails?</summary><div class="c0c2a91">A failed transaction reverts and you keep your tokens, though the gas for the attempt is spent.</div></details>
-  </main>
-
-  <section class="c91cfd3"><h2>Sources</h2><ul class="cf760f8"><li><a class="c6c86ef" href="https://docs.arbitrum.io/" rel="nofollow noopener" target="_blank">Arbitrum documentation</a></li>
+<details class="c73734e"><summary class="c72dced">What happens if my swap fails?</summary><div class="c0c2a91">A failed transaction reverts and you keep your tokens, though the gas for the attempt is spent.</div></details></main>
+<section class="c1f6b9a" id="sources" aria-labelledby="sources-title"><h2 class="c9dd394" id="sources-title">Sources</h2><div><ul class="cf760f8"><li><a class="c6c86ef" href="https://docs.arbitrum.io/" rel="nofollow noopener" target="_blank">Arbitrum documentation</a></li>
 <li><a class="c6c86ef" href="https://en.wikipedia.org/wiki/Arbitrum" rel="nofollow noopener" target="_blank">Arbitrum on Wikipedia</a></li>
-<li><a class="c6c86ef" href="https://arbiscan.io/" rel="nofollow noopener" target="_blank">Arbiscan explorer</a></li></ul></section>
+<li><a class="c6c86ef" href="https://arbiscan.io/" rel="nofollow noopener" target="_blank">Arbiscan explorer</a></li></ul></div></section>
+<footer class="c362a80"><span class="c0c02cf">Compare with clarity.</span><p class="ce09011">Updated Oct 09, 2026</p></footer>
 </div>
-<hr class="cf81e33">
-<div class="cc553ae"><footer><span>Updated Oct 09, 2026</span><span>Self-custody · on-chain settlement · you hold your keys.</span></footer></div>
+<script>
+(() => {
+  const amount = document.getElementById('amount');
+  const received = document.getElementById('received');
+  const fee = document.getElementById('fee');
+  const time = document.getElementById('time');
+  const error = document.getElementById('amount-error');
+  const number = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  let timer;
+  function update() {
+    const value = amount.valueAsNumber;
+    const valid = amount.value.trim() !== '' && Number.isFinite(value) && amount.validity.valid;
+    amount.setAttribute('aria-invalid', String(!valid));
+    error.hidden = valid;
+    error.textContent = valid ? '' : 'Enter an amount from 1 to 1,000,000,000 with up to 2 decimal places.';
+    if (!valid) {
+      received.textContent = '—';
+      fee.textContent = '—';
+      time.textContent = '—';
+      return;
+    }
+    const amountCents = Math.round(value * 100);
+    const feeCents = 50 + Math.round(amountCents * 35 / 10000);
+    received.textContent = number.format((amountCents - feeCents) / 100) + ' units';
+    fee.textContent = number.format(feeCents / 100) + ' units';
+    time.textContent = (2 + Math.ceil(value / 10000)).toLocaleString('en-US') + ' min';
+  }
+  amount.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(update, 180);
+  });
+  amount.addEventListener('change', () => {
+    clearTimeout(timer);
+    update();
+  });
+  update();
+})();
+</script>
 </body>
 </html>
