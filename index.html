@@ -1,378 +1,102 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arbitrum Swap | Swap Tokens on Arbitrum &amp; Across Chains</title><meta name="description" content="Arbitrum Swap brings token and network selection into one simple interface. Explore cross-chain routes, fees and points without connecting a wallet or registering."><meta name="theme-color" content="#070b12">
-<link rel="canonical" href="https://arbitrumswap.github.io/"><link rel="icon" type="image/svg+xml" href="swap/assets/arb.svg">
-<meta property="og:type" content="website"><meta property="og:title" content="Arbitrum Swap | Swap Tokens on Arbitrum &amp; Across Chains"><meta property="og:description" content="Arbitrum Swap brings token and network selection into one simple interface. Explore cross-chain routes, fees and points without connecting a wallet or registering."><meta property="og:url" content="https://arbitrumswap.github.io/"><meta property="og:site_name" content="Arbitrum Swap">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Arbitrum Swap | Swap Tokens on Arbitrum &amp; Across Chains"><meta name="twitter:description" content="Arbitrum Swap brings token and network selection into one simple interface. Explore cross-chain routes, fees and points without connecting a wallet or registering."><meta name="twitter:url" content="https://arbitrumswap.github.io/"><script type="application/ld+json">{
-    "@context":  "https://schema.org",
-    "@graph":  [
-                   {
-                       "url":  "https://arbitrumswap.github.io/",
-                       "name":  "Arbitrum Swap",
-                       "@id":  "https://arbitrumswap.github.io/#website",
-                       "@type":  "WebSite"
-                   },
-                   {
-                       "name":  "Arbitrum Swap",
-                       "@id":  "https://arbitrumswap.github.io/#app",
-                       "operatingSystem":  "Web",
-                       "description":  "Token and network selection for Arbitrum and cross-chain swaps. Live execution is currently unavailable.",
-                       "applicationCategory":  "FinanceApplication",
-                       "@type":  "SoftwareApplication",
-                       "url":  "https://arbitrumswap.github.io/swap/"
-                   },
-                   {
-                       "mainEntity":  [
-                                          {
-                                              "acceptedAnswer":  {
-                                                                     "text":  "A same-network swap changes one token into another on Arbitrum. A bridge moves value between networks. A cross-chain swap combines a network change with a token exchange, such as ETH on Arbitrum to USDC on Ethereum.",
-                                                                     "@type":  "Answer"
-                                                                 },
-                                              "name":  "How is Arbitrum Swap different from a bridge?",
-                                              "@type":  "Question"
-                                          },
-                                          {
-                                              "acceptedAnswer":  {
-                                                                     "text":  "The interface includes ETH, ARB, USDC and USDT on Arbitrum; ETH, USDC and USDT on Ethereum; and native BTC, SOL and BNB on Bitcoin, Solana and BNB Chain. A selectable pair is not a confirmed route: availability and minimum amounts require a live quote.",
-                                                                     "@type":  "Answer"
-                                                                 },
-                                              "name":  "Which tokens and networks can I select?",
-                                              "@type":  "Question"
-                                          },
-                                          {
-                                              "acceptedAnswer":  {
-                                                                     "text":  "Compare the final receive amount, route or provider fee, and network costs before funding an order. Sending tokens from Arbitrum requires ETH for gas. Fees depend on the pair and route; this interface does not currently provide live fee quotes.",
-                                                                     "@type":  "Answer"
-                                                                 },
-                                              "name":  "What fees apply to an Arbitrum Swap?",
-                                              "@type":  "Question"
-                                          },
-                                          {
-                                              "acceptedAnswer":  {
-                                                                     "text":  "You control funds until you send them. A deposit-based exchange then uses the selected provider or route contracts to process the transfer before delivery to your receiving address. Keeping your private keys does not mean funds remain in your custody throughout settlement. Review provider and refund terms before sending.",
-                                                                     "@type":  "Answer"
-                                                                 },
-                                              "name":  "Who holds my funds during the exchange?",
-                                              "@type":  "Question"
-                                          },
-                                          {
-                                              "acceptedAnswer":  {
-                                                                     "text":  "No wallet connection or registration is needed to use this interface. The intended deposit-based flow uses a receiving address and a transfer from your own wallet. Identity checks depend on the execution provider and its rules; a universal no-KYC guarantee cannot be confirmed without a live route.",
-                                                                     "@type":  "Answer"
-                                                                 },
-                                              "name":  "Do I need to connect a wallet, register or complete KYC?",
-                                              "@type":  "Question"
-                                          },
-                                          {
-                                              "acceptedAnswer":  {
-                                                                     "text":  "Settlement depends on network confirmations, liquidity and provider processing. Points are intended for completed exchanges, with eligibility and amounts shown alongside an executable quote. Live swaps and points accrual are currently unavailable; selecting a pair does not create an order.",
-                                                                     "@type":  "Answer"
-                                                                 },
-                                              "name":  "How quickly does a swap finish, and how do points work?",
-                                              "@type":  "Question"
-                                          }
-                                      ],
-                       "@id":  "https://arbitrumswap.github.io/#faq",
-                       "@type":  "FAQPage"
-                   }
-               ]
-}</script><style>
-
-:root{
-  --bg:#070b12;
-  --surface:#101925;
-  --surface-2:#192637;
-  --surface-3:#121d2a;
-  --edge:#233346;
-  --edge-strong:#354b63;
-  --text:#f8f8f8;
-  --muted:#a5b3c4;
-  --muted-2:#93a4b8;
-  --green:#12aaff;
-  --green-bright:#56c4ff;
-  --grad-a:#28a0f0;
-  --grad-b:#56c4ff;
-  --green-tint:rgba(18,170,255,.14);
-  --radius-card:25px;
-  --radius-md:16px;
-  --radius-pill:9999px;
-  --shadow-glow:0 0 0 1px rgba(40,160,240,.55), 0 18px 60px -12px rgba(18,170,255,.35);
-  --font:"Inter","Inter Fallback",ui-sans-serif,system-ui,sans-serif;
-  --font-head:"Inter Tight","Inter Tight Fallback",var(--font);
-  --maxw:1200px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:var(--font);font-size:16px;line-height:1.55;
-  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-  overflow-x:hidden;
-}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arbitrum Swap — Trade Tokens on Arbitrum Cheaply</title>
+<meta name="description" content="Make an Arbitrum Swap to trade ETH, USDC and tokens on the Arbitrum network at low fees. See the route, rate and minimum received before you sign, and keep your own keys.">
+<link rel="canonical" href="https://arbitrumswap.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arbitrum Swap">
+<meta property="og:url" content="https://arbitrumswap.github.io/">
+<meta property="og:image" content="https://arbitrumswap.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arbitrum Swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://arbitrumswap.github.io/#website", "url": "https://arbitrumswap.github.io/", "name": "Arbitrum Swap — Trade Tokens on Arbitrum Cheaply"}, {"@type": "WebPage", "@id": "https://arbitrumswap.github.io/#webpage", "url": "https://arbitrumswap.github.io/", "name": "Arbitrum Swap — Trade Tokens on Arbitrum Cheaply", "isPartOf": {"@id": "https://arbitrumswap.github.io/#website"}, "description": "Make an Arbitrum Swap to trade ETH, USDC and tokens on the Arbitrum network at low fees. See the route, rate and minimum received before you sign, and keep your own keys.", "datePublished": "2026-10-09", "dateModified": "2026-10-09"}, {"@type": "SoftwareApplication", "name": "Arbitrum Swap", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://arbitrumswap.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Swaps"}, {"@type": "ListItem", "position": 3, "name": "Arbitrum Swap"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need ETH for an Arbitrum Swap?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Gas on Arbitrum is paid in ETH, so keep a small amount even when the tokens you trade are stablecoins."}}, {"@type": "Question", "name": "Why is an Arbitrum Swap cheaper than on Ethereum?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum is a layer-2 rollup, so gas is a fraction of Ethereum mainnet while still settling to it."}}, {"@type": "Question", "name": "Do I need an account to swap on Arbitrum?", "acceptedAnswer": {"@type": "Answer", "text": "No. You connect a self-custody wallet and trade on-chain, with no sign-up and no custody of your funds."}}, {"@type": "Question", "name": "Why do I receive less than the quote?", "acceptedAnswer": {"@type": "Answer", "text": "Price impact and slippage on your size, plus the gas and pool fees, reduce the output. The minimum received is the guaranteed floor at your slippage."}}, {"@type": "Question", "name": "What happens if my swap fails?", "acceptedAnswer": {"@type": "Answer", "text": "A failed transaction reverts and you keep your tokens, though the gas for the attempt is spent."}}]}]}</script>
+<style>
+:root{--bg:#0B0D12;--surface:#12151C;--text:#EAEEF4;--muted:#8A93A3;--accent:#28A0F0;--accent-ink:#FFFFFF;--radius:14px;--display:"Space Grotesk";--body:"Inter"}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:16px/1.65 var(--body),system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.cc553ae{max-width:1040px;margin:0 auto;padding:0 20px}
 a{color:inherit;text-decoration:none}
-img,svg{display:block;max-width:100%}
-button{font-family:inherit}
-h1,h2,h3{font-family:var(--font-head);font-weight:600;letter-spacing:-.02em;margin:0}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.accent{color:var(--green)}
-.muted{color:var(--muted)}
+.cf81e33{border:0;border-top:1px solid color-mix(in srgb,var(--text) 10%,transparent);margin:0}
+.c8d6b21{display:flex;align-items:center;justify-content:space-between;height:68px}
+.cadc5a2{font:700 18px var(--display),sans-serif}
+.cd479de{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);font:600 15px var(--body),sans-serif;border:0;border-radius:calc(var(--radius) * .7);padding:12px 22px;cursor:pointer}
+.cd479de.cbf1a91{background:transparent;color:var(--text);border:1px solid color-mix(in srgb,var(--text) 18%,transparent)}
+.c4d6608{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px;padding:18px 0 6px;flex-wrap:wrap}
+.c4d6608 a:hover{color:var(--text)}
+.cfdee26{padding:26px 0 30px}
+.ceeeb09{display:inline-block;font:600 12px var(--body),sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font:700 clamp(34px,5vw,56px)/1.05 var(--display),sans-serif;letter-spacing:-.03em;max-width:16ch}
+h1 em{font-style:normal;color:var(--accent)}
+.c0c6f61{color:var(--muted);font-size:clamp(17px,1.7vw,20px);margin:18px 0 24px;max-width:60ch}
+.cf0c125{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.c4301b2{display:flex;gap:10px;align-items:center;margin-top:22px;color:var(--muted);font-size:14px}
+.c4301b2 img{vertical-align:middle}
+/* таблица фактов */
+.c951288{width:100%;border-collapse:collapse;margin:8px 0 8px;background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%,transparent);border-radius:var(--radius);overflow:hidden}
+.c951288 th,.c951288 td{text-align:left;padding:13px 18px;font-size:15px;border-top:1px solid color-mix(in srgb,var(--text) 8%,transparent)}
+.c951288 tr:first-child th,.c951288 tr:first-child td{border-top:0}
+.c951288 th{color:var(--muted);font-weight:600;width:42%}
+.cd946d1{padding:6px 0 10px}
+.cd946d1 h2{font:600 13px var(--body),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+/* контент */
+.c29fdd9{padding:18px 0 10px;max-width:760px}
+.c74a537{padding:24px 0;border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent)}
+.c009ea6{font:700 clamp(21px,2.4vw,28px) var(--display),sans-serif;letter-spacing:-.02em;margin-bottom:10px}
+.c488d1f{color:var(--muted)}
+.c488d1f strong{color:var(--text)}
+.c73734e{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent);padding:4px 0}
+.c72dced{font:600 17px var(--display),sans-serif;cursor:pointer;padding:15px 0;list-style:none}
+.c0c2a91{color:var(--muted);padding:0 0 15px}
+.c91cfd3{padding:22px 0}
+.c91cfd3 h2{font:600 13px var(--body),sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.cf760f8{list-style:none;display:flex;flex-direction:column;gap:7px}
+.c6c86ef{color:var(--accent)}.c6c86ef:hover{text-decoration:underline}
+footer{border-top:1px solid color-mix(in srgb,var(--text) 9%,transparent);padding:26px 0;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="cc553ae">
+  <nav class="c8d6b21"><span class="cadc5a2">Arbitrum Swap</span><a class="cd479de" href="dashboard/">Open app</a></nav>
+</div>
+<hr class="cf81e33">
+<div class="cc553ae">
+  <nav class="c4d6608" aria-label="Breadcrumb"><a href="dashboard/">Home</a> <span>/</span> <span>Swaps</span> <span>/</span> <span>Arbitrum Swap</span></nav>
+  <header class="cfdee26">
+    <span class="ceeeb09">On-chain · self-custody</span>
+    <h1>Arbitrum <em>Swap</em>.</h1>
+    <p class="c0c6f61">An Arbitrum Swap trades ETH, USDC and other tokens on Arbitrum, an Ethereum layer-2 where fees are a fraction of mainnet. A DEX or aggregator routes your order across liquidity pools and shows the minimum received before you sign, your gas is paid in ETH, and your funds stay in your own wallet the whole time.</p>
+    <div class="cf0c125"><a class="cd479de" href="dashboard/">Start now</a><a class="cd479de cbf1a91" href="#faq">Read the details</a></div>
+    <div class="c4301b2"><img src="assets/tokens/eth.svg" alt="Ethereum" width="28" height="28"> <img src="assets/tokens/usdc.svg" alt="USDC" width="28" height="28"> <span>Supported assets and networks</span></div>
+  </header>
 
+  <section class="cd946d1"><h2>Key facts</h2><table class="c951288"><tbody><tr><th scope="row">Network</th><td>Arbitrum (Ethereum L2)</td></tr>
+<tr><th scope="row">Assets</th><td>ETH, USDC, USDT, ARB and more</td></tr>
+<tr><th scope="row">Gas</th><td>Paid in ETH, low L2 fees</td></tr>
+<tr><th scope="row">Pricing</th><td>Live rate, minimum received shown</td></tr>
+<tr><th scope="row">Custody</th><td>Self-custody — you hold your keys</td></tr></tbody></table></section>
 
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  height:44px;padding:0 22px;border-radius:var(--radius-pill);
-  font-weight:600;font-size:14px;cursor:pointer;border:.8px solid transparent;
-  transition:transform .15s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
-  white-space:nowrap;
-}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:linear-gradient(180deg,var(--grad-a) 0%,var(--grad-b) 100%);color:#031523}
-.btn-primary:hover{box-shadow:0 10px 30px -8px rgba(18,170,255,.55)}
-.btn-ghost{background:var(--bg);color:#fff;border-color:var(--edge)}
-.btn-ghost:hover{border-color:var(--edge-strong);background:#0a0a0a}
-.btn-icon{width:44px;padding:0}
-.btn-sm{height:36px;font-size:13px;padding:0 16px}
-.btn-block{width:100%;height:52px;font-size:15px}
+  <main class="c29fdd9" id="faq">
+    <section class="c74a537"><h2 class="c009ea6">How to make an Arbitrum Swap</h2><div class="c488d1f"><strong>Connect a wallet, choose the pair, and confirm.</strong> To make an Arbitrum Swap you pick the tokens, review the live rate, the <strong>minimum received</strong> at your slippage and the network fee, then approve the token once and sign. The trade settles on Arbitrum only after you sign, and fees are low because it is a layer-2.</div></section>
+<section class="c74a537"><h2 class="c009ea6">Arbitrum Swap fees and rate</h2><div class="c488d1f">An Arbitrum Swap costs the live market rate plus a small L2 gas fee and the pool spread; there is no custody and no account. Price impact grows with trade size, so the quote shows the minimum received as the floor at your chosen slippage. Small trades cost cents compared with Ethereum mainnet.</div></section>
+<section class="c74a537"><h2 class="c009ea6">Which tokens can you swap on Arbitrum?</h2><div class="c488d1f">You can swap ETH, USDC, USDT, ARB and other liquid tokens through Arbitrum DEXs and aggregators. The reachable list depends on routing liquidity at the moment; the interface shows the expected output for each pair so you can compare before trading.</div></section>
+<section class="c74a537"><h2 class="c009ea6">Is an Arbitrum Swap safe?</h2><div class="c488d1f">A self-custody swap keeps your keys in your wallet. Confirm the destination token's contract address, the amount received and the token approval you grant, prefer a limited approval over an unlimited one, and treat any request for a seed phrase as fraud.</div></section>
+<section class="c74a537"><h2 class="c009ea6">Swapping on Arbitrum vs on Ethereum mainnet</h2><div class="c488d1f">The same pair usually costs far less on Arbitrum than on Ethereum mainnet because gas is a fraction of the base layer. If your assets are already on Arbitrum, swapping there is cheapest; otherwise weigh the bridge cost against the fees saved, judging by the <strong>net amount received</strong>.</div></section>
+    <details class="c73734e"><summary class="c72dced">Do I need ETH for an Arbitrum Swap?</summary><div class="c0c2a91">Yes. Gas on Arbitrum is paid in ETH, so keep a small amount even when the tokens you trade are stablecoins.</div></details>
+<details class="c73734e"><summary class="c72dced">Why is an Arbitrum Swap cheaper than on Ethereum?</summary><div class="c0c2a91">Arbitrum is a layer-2 rollup, so gas is a fraction of Ethereum mainnet while still settling to it.</div></details>
+<details class="c73734e"><summary class="c72dced">Do I need an account to swap on Arbitrum?</summary><div class="c0c2a91">No. You connect a self-custody wallet and trade on-chain, with no sign-up and no custody of your funds.</div></details>
+<details class="c73734e"><summary class="c72dced">Why do I receive less than the quote?</summary><div class="c0c2a91">Price impact and slippage on your size, plus the gas and pool fees, reduce the output. The minimum received is the guaranteed floor at your slippage.</div></details>
+<details class="c73734e"><summary class="c72dced">What happens if my swap fails?</summary><div class="c0c2a91">A failed transaction reverts and you keep your tokens, though the gas for the attempt is spent.</div></details>
+  </main>
 
-
-.tag{
-  display:inline-block;color:var(--green);background:var(--green-tint);
-  font-size:12px;font-weight:600;padding:3px 13px;border-radius:30px;letter-spacing:.01em;
-}
-
-
-.site-header{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.72);backdrop-filter:blur(12px);border-bottom:.8px solid rgba(33,33,33,.7)}
-.nav{display:flex;align-items:center;gap:28px;height:70px}
-.brand{display:flex;align-items:center;gap:9px;font-family:var(--font-head);font-weight:700;font-size:19px;letter-spacing:-.01em}
-.brand .b-any{color:#fff}.brand .b-swap{color:var(--green)}
-.nav-links{display:flex;gap:26px;margin:0 auto;font-size:14.5px}
-.nav-links a{color:#cfcfcf;transition:color .15s}
-.nav-links a:hover,.nav-links a.active{color:#fff}
-.nav-actions{display:flex;align-items:center;gap:10px}
-.icon-btn{width:40px;height:40px;border-radius:var(--radius-pill);border:.8px solid var(--edge);background:#000;display:grid;place-items:center;cursor:pointer;color:var(--green);transition:border-color .15s}
-.icon-btn:hover{border-color:var(--edge-strong)}
-.menu-toggle{display:none}
-
-
-.hero{position:relative;text-align:center;padding:88px 0 40px;overflow:hidden}
-.hero-glow{position:absolute;inset:auto 0 -40% 0;height:80%;margin:auto;width:120%;left:-10%;
-  background:radial-gradient(60% 55% at 50% 90%, rgba(18,170,255,.16), transparent 70%);pointer-events:none}
-.hero-grid{position:absolute;inset:0;pointer-events:none;opacity:.5;
-  background-image:linear-gradient(rgba(18,170,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(18,170,255,.05) 1px,transparent 1px);
-  background-size:60px 60px;
-  -webkit-mask-image:radial-gradient(70% 60% at 50% 78%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 78%,#000,transparent)}
-.hero h1{position:relative;font-size:clamp(38px,6vw,72px);line-height:1.02;letter-spacing:-.03em;font-weight:600}
-.hero h1 .line2{color:var(--green)}
-.hero-sub{position:relative;color:var(--muted);max-width:640px;margin:22px auto 0;font-size:clamp(16px,1.6vw,19px)}
-.hero-cta{position:relative;display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap}
-
-
-.swap-stage{position:relative;max-width:520px;margin:44px auto 0;padding:0 4px}
-.swap-card{
-  position:relative;display:block;width:100%;text-align:left;cursor:pointer;
-  background:var(--surface);border:.8px solid var(--edge);border-radius:var(--radius-card);
-  padding:8px;transition:box-shadow .25s ease, border-color .25s ease, transform .25s ease;
-}
-.swap-card:hover,.swap-card:focus-visible{
-  outline:none;border-color:var(--green-bright);
-  box-shadow:var(--shadow-glow);transform:translateY(-3px);
-}
-.swap-row{background:var(--surface);border-radius:19px;padding:18px 18px 14px}
-.swap-row .label{color:var(--muted);font-size:14px}
-.swap-row .amount-line{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:12px}
-.swap-row .amount{font-size:30px;font-weight:500;letter-spacing:-.01em}
-.token-pill{display:inline-flex;align-items:center;gap:10px;background:var(--surface-2);border:.8px solid var(--edge);border-radius:var(--radius-pill);padding:7px 12px 7px 8px;min-width:150px}
-.token-pill .tk-meta{display:flex;flex-direction:column;line-height:1.1}
-.token-pill .tk-sym{font-weight:600;font-size:15px}
-.token-pill .tk-net{color:var(--muted);font-size:11.5px}
-.token-pill .chev{color:var(--muted);margin-left:auto}
-.swap-rate{display:flex;justify-content:space-between;color:var(--muted-2);font-size:13px;padding:8px 18px 4px}
-.swap-mid{display:flex;justify-content:center;margin:-14px 0;position:relative;z-index:2}
-.swap-toggle{width:40px;height:40px;border-radius:var(--radius-pill);background:var(--surface-2);border:.8px solid var(--edge);display:grid;place-items:center;color:var(--green);transition:transform .3s ease;cursor:pointer}
-.token-badge{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;font-weight:700;font-size:12px;color:#fff;overflow:hidden}
-
-
-.swap-hint{
-  position:absolute;left:50%;top:12px;transform:translate(-50%,-6px);
-  background:linear-gradient(180deg,var(--grad-a),var(--grad-b));color:#031523;
-  font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:var(--radius-pill);
-  display:flex;align-items:center;gap:7px;opacity:0;pointer-events:none;
-  transition:opacity .25s ease, transform .25s ease;z-index:5;box-shadow:0 8px 24px -8px rgba(18,170,255,.6)}
-.swap-card:hover .swap-hint,.swap-card:focus-visible .swap-hint{opacity:1;transform:translate(-50%,-14px)}
-
-
-.exchanges{border-top:.8px solid var(--edge);border-bottom:.8px solid var(--edge);margin-top:70px}
-.exchanges .wrap{display:flex;align-items:center;gap:22px;height:96px;flex-wrap:wrap;justify-content:center}
-.exchanges .ex-title{font-weight:600;font-size:17px;padding-right:22px;border-right:.8px solid var(--edge)}
-.ex-logos{display:flex;align-items:center;gap:40px;flex:1;justify-content:space-around;flex-wrap:wrap;color:#c9c9c9;font-weight:700;letter-spacing:.02em}
-.ex-logos span{opacity:.85;font-size:18px}
-
-
-.section{padding:96px 0}
-.section-head{max-width:720px}
-.section-head.center{margin:0 auto;text-align:center}
-.section-head h2{font-size:clamp(30px,4vw,46px);line-height:1.05;margin-top:14px;letter-spacing:-.03em}
-.section-head p{color:var(--muted);margin-top:12px}
-
-
-.how-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
-.step{background:var(--surface);border:.8px solid var(--edge);border-radius:var(--radius-card);padding:24px}
-.step .num{width:38px;height:38px;border-radius:12px;background:var(--green-tint);color:var(--green);display:grid;place-items:center;font-family:var(--font-head);font-weight:700;font-size:16px}
-.step h3{font-size:18px;margin-top:18px}
-.step p{color:var(--muted);font-size:14.5px;margin:8px 0 0}
-
-
-.feat-top{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:36px}
-.feat-top h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.03em}
-.grid{display:grid;gap:18px}
-.grid-2{grid-template-columns:2fr 1fr}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.card{background:var(--surface);border:.8px solid var(--edge);border-radius:var(--radius-card);padding:26px;position:relative;overflow:hidden;transition:border-color .2s}
-.card:hover{border-color:var(--edge-strong)}
-.card h3{font-size:20px;margin-bottom:8px}
-.card p{color:var(--muted);font-size:15px;margin:0}
-.card .card-body{min-height:200px;display:flex;align-items:center;justify-content:center}
-.card-foot{padding-top:22px}
-.token-cloud{display:grid;grid-template-columns:repeat(8,1fr);gap:14px;width:100%}
-.token-cloud .token-badge{width:46px;height:46px;margin:0 auto;box-shadow:0 6px 18px -8px rgba(0,0,0,.8)}
-.stat-big{font-family:var(--font-head);font-weight:600;font-size:96px;line-height:1;background:linear-gradient(180deg,var(--grad-b),var(--grad-a));-webkit-background-clip:text;background-clip:text;color:transparent}
-.orbit{width:100%;height:200px;display:grid;place-items:center;position:relative}
-.orbit .ring{position:absolute;border:1px solid rgba(255,255,255,.06);border-radius:50%}
-.orbit .r1{width:120px;height:120px}.orbit .r2{width:200px;height:200px}.orbit .r3{width:280px;height:280px}
-.orbit .core{width:64px;height:32px;border-radius:var(--radius-pill);background:linear-gradient(180deg,var(--grad-a),var(--grad-b));display:grid;place-items:center;box-shadow:0 0 30px rgba(18,170,255,.5)}
-
-
-.net-strip{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:44px}
-.net-chip{width:66px;height:66px;border-radius:20px;display:grid;place-items:center;border:.8px solid var(--edge);font-weight:700;color:#fff;font-size:13px}
-
-
-.svc-visual{height:210px;border-radius:var(--radius-md);background:var(--surface-3);border:.8px solid var(--edge);margin-bottom:22px;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:22px}
-.svc-bar{height:44px;border-radius:12px;background:#101010;border:.8px solid var(--edge);display:flex;align-items:center;gap:12px;padding:0 14px}
-.svc-bar .line{height:6px;border-radius:4px;background:#2a2a2a;flex:1}
-.svc-bar .dot{width:22px;height:22px;border-radius:50%;background:var(--green-tint);display:grid;place-items:center;color:var(--green)}
-
-
-.faq-list{max-width:960px;margin:44px auto 0}
-.faq-item{border-bottom:.8px solid var(--edge)}
-.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px 4px;font-family:var(--font-head);font-weight:600;font-size:19px}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary .chev{color:var(--muted);transition:transform .25s;flex:0 0 auto}
-.faq-item[open] summary .chev{transform:rotate(180deg)}
-.faq-item .answer{color:var(--muted);font-size:15.5px;padding:0 4px 24px;max-width:900px}
-.faq-foot{text-align:center;color:var(--muted);margin-top:40px}
-.faq-foot a{color:#fff;font-weight:600}
-
-
-.cta{position:relative;overflow:hidden;border-top:.8px solid var(--edge);border-bottom:.8px solid var(--edge)}
-.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:56px;padding-bottom:56px;flex-wrap:wrap}
-.cta h2{font-size:clamp(30px,4vw,44px);letter-spacing:-.03em}
-.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
-
-
-.footer{padding:64px 0 40px}
-.footer .cols{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px}
-.footer .tagline{color:var(--muted);font-size:14.5px;margin-top:14px;max-width:280px}
-.footer .socials{display:flex;gap:12px;margin-top:20px}
-.footer .socials a{width:38px;height:38px;border-radius:12px;border:.8px solid var(--edge);display:grid;place-items:center;color:#cfcfcf;transition:border-color .15s,color .15s}
-.footer .socials a:hover{border-color:var(--edge-strong);color:#fff}
-.footer h4{color:var(--muted);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:0 0 16px}
-.footer .flinks a{display:block;color:#d0d0d0;font-size:14.5px;padding:6px 0;transition:color .15s}
-.footer .flinks a:hover{color:#fff}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:48px;padding-top:24px;border-top:.8px solid var(--edge);color:var(--muted-2);font-size:13.5px;flex-wrap:wrap}
-
-
-.modal-root{position:fixed;inset:0;z-index:80;display:none}
-.modal-root.open{display:block}
-.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.66);backdrop-filter:blur(8px);animation:fade .2s ease}
-.modal-panel{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:min(468px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;
-  background:var(--surface);border:.8px solid var(--edge-strong);border-radius:var(--radius-card);
-  padding:8px;box-shadow:0 0 0 1px rgba(40,160,240,.18),0 40px 120px -30px rgba(0,0,0,.9),0 0 80px -40px rgba(18,170,255,.4);
-  animation:pop .28s cubic-bezier(.18,.9,.28,1.2);
-}
-@keyframes fade{from{opacity:0}to{opacity:1}}
-@keyframes pop{from{opacity:0;transform:translate(-50%,-46%) scale(.96)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-.modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 14px 12px}
-.modal-head .m-title{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:17px}
-.modal-head .m-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
-.modal-close{width:34px;height:34px;border-radius:50%;border:.8px solid var(--edge);background:var(--surface-2);display:grid;place-items:center;color:var(--muted);cursor:pointer;transition:color .15s,border-color .15s}
-.modal-close:hover{color:#fff;border-color:var(--edge-strong)}
-.m-field{background:var(--surface-3);border:.8px solid var(--edge);border-radius:19px;padding:16px 16px 14px;margin:6px}
-.m-field .label{color:var(--muted);font-size:13.5px}
-.m-field .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px}
-.m-input{background:none;border:none;outline:none;color:var(--text);font-size:30px;font-weight:500;font-family:var(--font);width:100%;letter-spacing:-.01em}
-.m-input::placeholder{color:var(--muted-2)}
-.m-rate{display:flex;justify-content:space-between;color:var(--muted-2);font-size:12.5px;margin-top:10px}
-.m-mid{display:flex;justify-content:center;margin:-13px 0;position:relative;z-index:3}
-.m-foot{padding:8px 6px 12px}
-.m-note{text-align:center;color:var(--muted-2);font-size:12.5px;margin-top:12px;display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
-.m-note b{color:var(--muted);font-weight:600}
-
-.tk-select{position:relative}
-.tk-btn{all:unset;box-sizing:border-box;cursor:pointer}
-.tk-menu{position:absolute;right:0;top:calc(100% + 8px);width:230px;background:var(--surface-2);border:.8px solid var(--edge-strong);border-radius:16px;padding:6px;z-index:6;box-shadow:0 24px 60px -20px rgba(0,0,0,.9);display:none}
-.tk-menu.open{display:block}
-.tk-opt{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:11px;cursor:pointer;transition:background .12s}
-.tk-opt:hover,.tk-opt.sel{background:#232323}
-.tk-opt .tk-meta{line-height:1.1}
-.tk-opt .tk-sym{font-weight:600;font-size:14px}
-.tk-opt .tk-net{color:var(--muted);font-size:11.5px}
-
-
-.history-fab{position:fixed;right:20px;bottom:20px;z-index:30;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:var(--radius-pill);background:var(--surface-2);border:.8px solid var(--edge);color:#fff;font-weight:600;font-size:14px;cursor:pointer}
-.history-fab:hover{border-color:var(--edge-strong)}
-
-
-@media (max-width:1000px){
-  .grid-2,.grid-3{grid-template-columns:1fr}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .footer .cols{grid-template-columns:1fr 1fr}
-  .token-cloud{grid-template-columns:repeat(8,1fr)}
-}
-@media (max-width:720px){
-  .nav-links{display:none}
-  .menu-toggle{display:grid}
-  .nav-actions .btn-tg{display:none}
-  .section{padding:64px 0}
-  .steps{grid-template-columns:1fr}
-  .exchanges .wrap{height:auto;padding-top:22px;padding-bottom:22px}
-  .exchanges .ex-title{border-right:none;padding-right:0}
-  .footer .cols{grid-template-columns:1fr}
-  .stat-big{font-size:72px}
-  .cta .wrap{flex-direction:column;align-items:flex-start}
-}
-@media (prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto !important}
-  .modal-panel,.modal-backdrop{animation:none}
-  .swap-card:hover{transform:none}
-}
-
-
-.mobile-menu{display:none;border-top:.8px solid var(--edge);background:#050505}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:14px 24px;border-bottom:.8px solid var(--edge);color:#d6d6d6}
-:focus-visible{outline:2px solid #56c4ff;outline-offset:5px}section[id]{scroll-margin-top:94px}
-.site-header{background:rgba(7,11,18,.88);border-color:#233346}.brand img{width:32px;height:32px}.brand{white-space:nowrap}.nav-links{gap:24px}.nav-actions{margin-left:auto}
-.hero{padding-top:72px}.eyebrow{position:relative;font-size:11px;letter-spacing:.18em;color:#a5b3c4;margin:0 0 20px}.hero h1{font-size:clamp(42px,6vw,72px)}
-.swap-stage{margin-top:34px;padding:0 16px;max-width:520px}.swap-card{background:linear-gradient(135deg,#263f59,#101925 48%,#14273b);border:1px solid #395674;box-shadow:0 22px 80px -25px #126ba94d;padding:12px}.swap-row{background:#0b1420b8;border:1px solid #26384c;padding:16px}.swap-top{display:flex;justify-content:space-between;padding:5px 6px 16px;font-size:13px}.swap-top span{color:#a5b3c4}.swap-rate{padding:12px 5px;color:#a5b3c4;font-size:12px}.swap-mid{margin:-7px 0}.swap-card .btn{margin-top:8px;border-radius:12px}
-.exchanges{margin-top:35px}.ex-logos{font-size:17px;gap:36px;color:#a5b3c4}.ex-logos span{display:flex;gap:10px;align-items:center}.ex-logos img{width:25px;height:25px}.section{padding:85px 0}
-.feature-icon{display:grid;place-items:center;color:#56c4ff}.cta-copy{max-width:720px}.cta-copy p{color:var(--muted);margin:14px 0 0}.quote-pending{font-size:16px;color:var(--muted)}.card-body{background:radial-gradient(ellipse at center,#153a58 0,transparent 70%)}.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.network-list{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:28px}.network-list span{padding:10px 18px;border:1px solid #293e54;border-radius:10px;color:#b9c7d6}.footer .cols{grid-template-columns:2fr 1fr 1fr}.footer-bottom{color:#93a4b8}.mobile-menu{background:#101925}.mobile-menu.open{display:flex;flex-direction:column}
-@media(max-width:760px){.nav-links{display:none}.menu-toggle{display:grid}.nav{gap:12px}.brand{font-size:16px}.nav-actions .btn{display:none}.hero{padding-top:48px}.hero-sub{font-size:16px}.ex-logos{gap:20px}.section{padding:60px 0}.cards-3,.footer .cols{grid-template-columns:1fr}.swap-row .amount{font-size:27px}.wrap{padding:0 20px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}</style></head><body><header class="site-header"><div class="wrap nav"><a href="/" class="brand" aria-label="Arbitrum Swap home"><img src="swap/assets/arb.svg" width="32" height="32" alt=""><span>Arbitrum <span class="accent">Swap</span></span></a><nav class="nav-links" aria-label="Primary"><a href="/swap/">Swap</a><a href="/#how">How it works</a><a href="/#networks">Networks</a><a href="/#faq">FAQ</a></nav><div class="nav-actions"><a href="/swap/" class="btn btn-primary btn-sm">Open swap</a><button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div><nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"><a href="/swap/">Swap</a><a href="/#how">How it works</a><a href="/#networks">Networks</a><a href="/#faq">FAQ</a></nav></header>
-<main><section class="hero"><div class="hero-glow" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">ARBITRUM IN. POSSIBILITIES OUT.</p><h1>Arbitrum Swap<br><span class="line2">One flow. Across chains.</span></h1><p class="hero-sub">A simpler way to move between tokens on Arbitrum and beyond. Choose your pair without connecting a wallet or creating an account.</p><div class="hero-cta"><a class="btn btn-primary" href="/swap/">Open swap</a><a class="btn btn-ghost" href="/#how">How it works</a></div></div>
-<div class="swap-stage"><a class="swap-card" href="/swap/" aria-label="Open Arbitrum Swap to choose tokens, networks and amount"><div class="swap-top"><strong>Swap &amp; bridge</strong><span>Arbitrum One</span></div><div class="swap-row"><div class="label">You send</div><div class="amount-line"><span class="amount">1.00</span><span class="token-pill"><img class="token-badge" src="swap/assets/eth.svg" width="36" height="36" alt=""><span class="tk-meta"><span class="tk-sym">ETH</span><span class="tk-net">Arbitrum</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></div></div><div class="swap-mid"><span class="swap-toggle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></span></div><div class="swap-row"><div class="label">You receive</div><div class="amount-line"><span class="quote-pending">Quote pending</span><span class="token-pill"><img class="token-badge" src="swap/assets/usdc.svg" width="36" height="36" alt=""><span class="tk-meta"><span class="tk-sym">USDC</span><span class="tk-net">Ethereum</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></div></div><div class="swap-rate"><span>Choose your route</span><span>Live quotes unavailable</span></div><span class="btn btn-primary btn-block">Open Arbitrum Swap</span></a></div></section>
-<section class="exchanges" aria-label="Featured assets"><div class="wrap"><div class="ex-title">FAMILIAR ASSETS. MORE POSSIBILITIES.</div><div class="ex-logos"><span><img src="swap/assets/arb.svg" alt="" width="25" height="25">ARB</span><span><img src="swap/assets/eth.svg" alt="" width="25" height="25">ETH</span><span><img src="swap/assets/usdc.svg" alt="" width="25" height="25">USDC</span><span><img src="swap/assets/btc.svg" alt="" width="25" height="25">BTC</span><span><img src="swap/assets/sol.svg" alt="" width="25" height="25">SOL</span></div></div></section>
-<section class="section" id="how"><div class="wrap"><div class="how-head"><div class="section-head"><span class="tag">The exchange flow</span><h2>Your Arbitrum Swap,<br><span class="accent">step by step.</span></h2><p>Start with your assets and networks. A live route is required before an exchange can be funded.</p></div><a class="btn btn-primary" href="/swap/">Choose a pair</a></div><div class="steps"><div class="step"><div class="num">01</div><h3>Choose both sides</h3><p>Select your send and receive tokens, their networks and the amount to exchange.</p></div><div class="step"><div class="num">02</div><h3>Review the route</h3><p>When quotes are available, compare the receive amount, fees, minimum deposit and expiry.</p></div><div class="step"><div class="num">03</div><h3>Send your deposit</h3><p>Confirm the receiving address. Only fund a valid order using its exact asset and network.</p></div><div class="step"><div class="num">04</div><h3>Receive your tokens</h3><p>The provider delivers to your address after processing. Eligible completed swaps earn points.</p></div></div></div></section>
-<section class="section" style="padding-top:0"><div class="wrap"><div class="section-head"><span class="tag">Built around Arbitrum</span><h2>Arbitrum Swap: wallet access,<br><span class="accent">fees and rewards.</span></h2><p>From a token change on Arbitrum to a move across networks, the details belong in one place.</p></div><div class="cards-3"><div class="card"><div class="card-body"><span class="feature-icon"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/></svg></span></div><div class="card-foot"><h3>Tokens and networks, together</h3><p>Choose the asset and its destination chain explicitly. ETH on Arbitrum and ETH on Ethereum are separate selections.</p></div></div><div class="card"><div class="card-body"><span class="feature-icon"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></span></div><div class="card-foot"><h3>No wallet connection</h3><p>Select pairs without connecting a wallet or registering. A deposit-based route uses a receiving address, never your private keys. KYC requirements depend on the provider; this interface cannot guarantee a no-KYC exchange.</p></div></div><div class="card"><div class="card-body"><span class="feature-icon"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m9 15 6-6"/><circle cx="9" cy="9" r=".8"/><circle cx="15" cy="15" r=".8"/></svg></span></div><div class="card-foot"><h3>Costs clear. Rewards visible.</h3><p>Before funding a swap, check the receive amount, provider fees and network costs. A live quote must confirm any points eligibility and reward amount; fees and rewards are currently unavailable.</p></div></div></div></div></section>
-<section class="section" id="networks" style="padding-top:0"><div class="wrap"><div class="section-head center"><span class="tag">Across ecosystems</span><h2>Arbitrum cross-chain swaps:<br><span class="accent">tokens and networks.</span></h2><p>Choose ETH, ARB, USDC or USDT on Arbitrum One for a same-network token swap, or select a destination on another chain. The cross-chain selector also includes ETH, USDC and USDT on Ethereum, BTC on Bitcoin, SOL on Solana and BNB on BNB Chain.</p><p>A route such as ETH on Arbitrum to USDC on Ethereum changes both the asset and the network, so you can plan to receive the token where you intend to use it. Check the destination network as well as the token symbol when entering a receiving address.</p><p>These are selectable assets, not confirmed exchange routes. Availability, receive amounts and minimum deposits depend on a live provider quote; live quotes and exchange execution are currently unavailable.</p></div><div class="network-list"><span>Arbitrum One</span><span>Ethereum</span><span>Bitcoin</span><span>Solana</span><span>BNB Chain</span></div></div></section>
-<section class="section" id="faq" style="padding-top:0"><div class="wrap"><div class="section-head center"><span class="tag">Useful answers</span><h2>Arbitrum Swap <span class="accent">FAQ</span></h2></div><div class="faq-list"><details class="faq-item"><summary>How is Arbitrum Swap different from a bridge?<span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="answer">A same-network swap changes one token into another on Arbitrum. A bridge moves value between networks. A cross-chain swap combines a network change with a token exchange, such as ETH on Arbitrum to USDC on Ethereum.</div></details><details class="faq-item"><summary>Which tokens and networks can I select?<span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="answer">The interface includes ETH, ARB, USDC and USDT on Arbitrum; ETH, USDC and USDT on Ethereum; and native BTC, SOL and BNB on Bitcoin, Solana and BNB Chain. A selectable pair is not a confirmed route: availability and minimum amounts require a live quote.</div></details><details class="faq-item"><summary>What fees apply to an Arbitrum Swap?<span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="answer">Compare the final receive amount, route or provider fee, and network costs before funding an order. Sending tokens from Arbitrum requires ETH for gas. Fees depend on the pair and route; this interface does not currently provide live fee quotes.</div></details><details class="faq-item"><summary>Who holds my funds during the exchange?<span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="answer">You control funds until you send them. A deposit-based exchange then uses the selected provider or route contracts to process the transfer before delivery to your receiving address. Keeping your private keys does not mean funds remain in your custody throughout settlement. Review provider and refund terms before sending.</div></details><details class="faq-item"><summary>Do I need to connect a wallet, register or complete KYC?<span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="answer">No wallet connection or registration is needed to use this interface. The intended deposit-based flow uses a receiving address and a transfer from your own wallet. Identity checks depend on the execution provider and its rules; a universal no-KYC guarantee cannot be confirmed without a live route.</div></details><details class="faq-item"><summary>How quickly does a swap finish, and how do points work?<span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="answer">Settlement depends on network confirmations, liquidity and provider processing. Points are intended for completed exchanges, with eligibility and amounts shown alongside an executable quote. Live swaps and points accrual are currently unavailable; selecting a pair does not create an order.</div></details></div></div></section>
-<section class="cta"><div class="wrap"><div class="cta-copy"><h2>Prepare your Arbitrum Swap:<br><span class="accent">choose tokens and a network.</span></h2><p>Select an Arbitrum token pair or a cross-chain destination, enter an amount and specify the receiving address without connecting a wallet or creating an account. Check that the chosen token and network match your intended destination.</p><p>You can explore the pair selector now. Live quotes are unavailable, so an exchange order cannot yet be created; fees, receive amounts and any rewards need an executable quote.</p></div><div class="cta-actions"><a href="/swap/" class="btn btn-primary">Open Arbitrum Swap</a></div></div></section></main>
-<footer class="footer"><div class="wrap"><div class="cols"><div><a href="/" class="brand"><img src="swap/assets/arb.svg" width="32" height="32" alt="">Arbitrum Swap</a><p class="tagline">A clear path between tokens and networks.</p></div><div><h4>Explore</h4><div class="flinks"><a href="/swap/">Swap interface</a><a href="/#networks">Networks &amp; assets</a></div></div><div><h4>Understand</h4><div class="flinks"><a href="/#how">How it works</a><a href="/#faq">Fees, custody &amp; FAQ</a></div></div></div><div class="footer-bottom"><span>© 2026 Arbitrum Swap</span><span>Independent interface. Not affiliated with the Arbitrum Foundation.</span></div></div></footer>
-<script>
-const menuButton=document.getElementById('menuToggle'),menu=document.getElementById('mobileMenu');
-menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close menu':'Open menu')});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}});
-</script></body></html>
+  <section class="c91cfd3"><h2>Sources</h2><ul class="cf760f8"><li><a class="c6c86ef" href="https://docs.arbitrum.io/" rel="nofollow noopener" target="_blank">Arbitrum documentation</a></li>
+<li><a class="c6c86ef" href="https://en.wikipedia.org/wiki/Arbitrum" rel="nofollow noopener" target="_blank">Arbitrum on Wikipedia</a></li>
+<li><a class="c6c86ef" href="https://arbiscan.io/" rel="nofollow noopener" target="_blank">Arbiscan explorer</a></li></ul></section>
+</div>
+<hr class="cf81e33">
+<div class="cc553ae"><footer><span>Updated Oct 09, 2026</span><span>Self-custody · on-chain settlement · you hold your keys.</span></footer></div>
+</body>
+</html>
